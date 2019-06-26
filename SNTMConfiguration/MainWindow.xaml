@@ -1,0 +1,175 @@
+﻿<Window x:Class="WindowsNetworkMonitorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsNetworkMonitorWPF"
+        mc:Ignorable="d"
+        Title="Simple Network Traffic Monitor" Height="370" Width="400">
+
+    <Border Padding="10">
+        <StackPanel>
+            <!-- First col
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="0 0 10 0" Grid.Column="0" Content="?"/>
+                <Button Margin="0 0 10 0" Grid.Column="1" Content="??"/>
+                <Button Grid.Column="2" Content="???"/>
+            </Grid>-->
+
+            <!-- User set configuration -->
+            <StackPanel Margin="0 0 0 10">
+                <TextBlock Text="Configuration" FontWeight="Bold" FontSize="15" Margin="0 0 0 5"/>
+
+                <!-- Set network interface -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Network interface: " Margin="0 0 0 0" Grid.Column="0"/>
+                    <ComboBox x:Name="NetworkInterfaceSelectionBox" Grid.Column="1" SelectedIndex="0" SelectionChanged="NetworkInterfaceSelectionBox_SelectionChanged">
+                        <!--<ComboBoxItem>LAN</ComboBoxItem>
+                        <ComboBoxItem>Bluetooth</ComboBoxItem>
+                        <ComboBoxItem>WiFi</ComboBoxItem>-->
+                    </ComboBox>
+                </Grid>
+
+                <!-- Set update frequency -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Update frequency: " Margin="0,0,0,0" Grid.ColumnSpan="2"/>
+                    <Slider ValueChanged="UpdateFrequencySlider_ValueChanged" x:Name="UpdateFrequencySlider" Padding="0" Grid.Column="1" Margin="0,0,0,0"/>
+                    <TextBox x:Name="UpdateFrequencyLabel" Grid.Column="2" TextChanged="UpdateFrequencyLabel_TextChanged" Height="18"/>
+                    <!--<TextBlock x:Name="UpdateFrequencyLabel" Text="10" Margin="5,0,0,0" Grid.Column="2"/>-->
+                    <TextBlock Text="second(s)" Margin="5,0,0,0" Grid.Column="3"/>
+                </Grid>
+
+                <!-- Set speed unit -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Speed unit:" Grid.Column="0"/>
+                    <ComboBox SelectionChanged="SpeedUnitSelectionBox_SelectionChanged" x:Name="SpeedUnitSelectionBox" Grid.Column="1">
+                        <ComboBoxItem>Kbit/s</ComboBoxItem>
+                        <ComboBoxItem>KB/s</ComboBoxItem>
+                        <ComboBoxItem>Mbit/s</ComboBoxItem>
+                        <ComboBoxItem>MB/s</ComboBoxItem>
+                        <ComboBoxItem>Gbit/s</ComboBoxItem>
+                        <ComboBoxItem>GB/s</ComboBoxItem>
+                        <!--<ComboBoxItem>Byte/s</ComboBoxItem>
+                        <ComboBoxItem>bit/s</ComboBoxItem>-->
+                    </ComboBox>
+                </Grid>
+
+                <!-- Set the way to show the traffic -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Display mode:"/>
+                    <ComboBox Grid.Column="1" SelectionChanged="DisplaySelectionBox_SelectionChanged" x:Name="DisplaySelectionBox" SelectedIndex="0">
+                        <ComboBoxItem>Floating window</ComboBoxItem>
+                        <ComboBoxItem>Taskbar tool</ComboBoxItem>
+                        <ComboBoxItem>Window and Tool</ComboBoxItem>
+                        <ComboBoxItem>Do not display</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+
+                <!-- Set the size of floating window -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Size of window:"/>
+                    <ComboBox Grid.Column="1" SelectionChanged="WindowSizeSelectionBox_SelectionChanged" x:Name="WindowSizeSelectionBox" SelectedIndex="0">
+                        <ComboBoxItem>Small</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>Large</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+
+                <!-- Set turned on when logged in -->
+                <Grid Margin="20 0 0 5" Height="22">
+                    <!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>-->
+                    <CheckBox x:Name="AutoRunCheckBox" Checked="AutoRunCheckBox_Checked" Unchecked="AutoRunCheckBox_Unchecked">Run after logged in automatically</CheckBox>
+
+
+                </Grid>
+                <!--<DocumentViewer x:Name="documentViewer"/>-->
+
+            </StackPanel>
+
+            <!-- Show traffic information -->
+            <StackPanel Margin="0 0 0 10">
+                <TextBlock Text="Netowrk Traffic" FontWeight="Bold" FontSize="15"></TextBlock>
+                <!-- show upload traffic -->
+                <Grid Margin="20 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Upload traffic:"/>
+                    <TextBlock x:Name="UploadTrafficTextBlock" Grid.Column="1" Text="X.XX MB/s"/>
+                </Grid>
+
+                <!-- show download traffic -->
+                <Grid Margin="20 0 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Download traffic:"/>
+                    <TextBlock x:Name="DownloadTrafficTextBlock" Grid.Column="1" Text="Y.YY MB/s"/>
+                </Grid>
+            </StackPanel>
+
+            <!-- Button set -->
+            <StackPanel>
+                <Grid Margin="0 0 0 5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="DefaultButton" Click="DefaultButton_Click" Content="Default" Grid.Column="0" Margin="0 0 5 0"/>
+                    <Button x:Name="ResetButton" Click="ResetButton_Click" Content="Reset" Grid.Column="1" Margin="5 0 0 0"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="ApplyButton" Click="ApplyButton_Click" Content="Apply" Grid.Column="0" Margin="0 0 5 0"/>
+                    <Button x:Name="CancelButton" Click="CancelButton_Click" Content="Close" Grid.Column="1" Margin="5 0 0 0"/>
+                </Grid>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+</Window>

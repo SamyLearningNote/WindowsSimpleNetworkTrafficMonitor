@@ -1,0 +1,15 @@
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.exe.config
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csprojAssemblyReference.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\App.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.lref
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.baml
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.g.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.Properties.Resources.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.pdb

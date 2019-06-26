@@ -1,0 +1,15 @@
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\bin\Debug\WindowsNetworkMonitorWPF.exe.config
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\bin\Debug\WindowsNetworkMonitorWPF.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\bin\Debug\WindowsNetworkMonitorWPF.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\Configuration.csprojAssemblyReference.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\MainWindow.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\App.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF_MarkupCompile.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF_MarkupCompile.lref
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\MainWindow.baml
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF.g.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF.Properties.Resources.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\Configuration.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\Configuration.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\WindowsNetworkMonitorWPF\obj\Debug\WindowsNetworkMonitorWPF.pdb

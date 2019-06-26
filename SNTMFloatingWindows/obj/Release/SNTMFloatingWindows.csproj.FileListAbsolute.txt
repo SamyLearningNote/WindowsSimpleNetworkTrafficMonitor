@@ -1,0 +1,16 @@
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\bin\Release\SNTMFloatingWindow.exe.config
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\bin\Release\SNTMFloatingWindow.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\bin\Release\SNTMFloatingWindow.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindows.csprojAssemblyReference.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\MainWindow.baml
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\MainWindow.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\App.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow_MarkupCompile.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow.g.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow.Properties.Resources.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindows.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindows.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow_MarkupCompile.lref
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMFloatingWindows\obj\Release\SNTMFloatingWindow.FloatingWindowResource.resources

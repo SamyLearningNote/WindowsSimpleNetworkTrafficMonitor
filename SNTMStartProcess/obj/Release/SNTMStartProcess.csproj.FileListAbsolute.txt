@@ -1,0 +1,12 @@
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.exe.config
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csprojAssemblyReference.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.About.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\StartProcess.LoadingForm.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.Properties.Resources.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.MenuResource.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.pdb

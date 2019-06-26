@@ -1,0 +1,14 @@
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\MainWindow.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\App.g.cs
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\MainWindow.baml
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindows.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindows.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\bin\Debug\FloatingWindow.exe.config
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\bin\Debug\FloatingWindow.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\bin\Debug\FloatingWindow.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindow_MarkupCompile.cache
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindow.g.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindow.Properties.Resources.resources
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindow.exe
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindow.pdb
+C:\Users\CH\Desktop\SummerProject\WindowsNetworkMonitorWPF\FloatingWindows\obj\Debug\FloatingWindows.csprojAssemblyReference.cache
