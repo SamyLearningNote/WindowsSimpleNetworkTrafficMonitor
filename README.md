@@ -7,12 +7,12 @@ a network monitor which is lite and easy to use
 3. Enjoy
 
 # Icon used
-From flaticon.com
-Always On Top: Pasue08
-Configuration: Gregor Cresnar
-Show: Chris Veigt
-Hide: Pixel perfect
-About: Good Ware
+From flaticon.com,
+Always On Top: Pasue08,
+Configuration: Gregor Cresnar,
+Show: Chris Veigt,
+Hide: Pixel perfect,
+About: Good Ware,
 Exit: Smashicons
 
 # Contributor
