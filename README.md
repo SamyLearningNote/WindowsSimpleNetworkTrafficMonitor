@@ -16,6 +16,6 @@ About: Good Ware,
 Exit: Smashicons
 
 # Contributor
-SAMY
-Rene
+SAMY,
+Rene,
 Zachary
