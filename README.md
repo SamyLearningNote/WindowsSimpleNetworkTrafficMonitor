@@ -17,6 +17,7 @@ A lgihtweight and easy-to-use network monitor
 4. Hide Icon made by [https://www.flaticon.com/authors/pixel-perfect] From www.flaticon.com
 5. About Icon made by [https://www.flaticon.com/authors/good-ware] From www.flaticon.com
 6. Exit Icon made by [https://www.flaticon.com/authors/smashicons] From www.flaticon.com
+7. Reset Icon made by [https://www.flaticon.com/authors/smashicons] From www.flaticon.com
 
 # Contributors
 SAMY,
