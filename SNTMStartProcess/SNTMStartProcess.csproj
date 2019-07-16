@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SNTMStartProcess</RootNamespace>
     <AssemblyName>SNTMStartProcess</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>SNTMico1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,13 +74,13 @@
     <Compile Include="LoadingApplication.Designer.cs">
       <DependentUpon>LoadingApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MenuResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MenuResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +101,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,6 +131,30 @@
     <None Include="bin\Debug\images\visibility.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\show.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\config.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\pin.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\visibility.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\floatingwindow.png" />
+    <None Include="Resources\eye_dark_mode.bmp" />
+    <None Include="Resources\eye_dark_mode.png" />
+    <None Include="Resources\floatingwindow_dark_mode.png" />
+    <None Include="Resources\information_dark_mode.png" />
+    <None Include="Resources\logout_dark_mode.png" />
+    <None Include="Resources\minimize_dark_mode.png" />
+    <None Include="Resources\pin_dark_mode.png" />
+    <None Include="Resources\settings_dark_mode.png" />
+    <None Include="Resources\target_dark_mode.png" />
+    <None Include="Resources\visibility_dark_mode.png" />
     <Content Include="SNTMico1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

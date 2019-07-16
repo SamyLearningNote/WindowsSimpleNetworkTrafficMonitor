@@ -30,13 +30,15 @@ namespace FloatingWindows
         
         NetworkInterface[] interfaces;
 
+        int loadedLanguageIndex = 0;
         int loadedInterfaceIndex = 0;
         double loadedUpdateFrequency = 1;
         int loadedSpeedUnitIndex = 0;
         string loadedSpeedUnit = "";
-        bool loadedAutoStartCheck = true;
         int loadedDisplayMethodIndex = 0;
         int loadedDisplaySizeIndex = 0;
+        int loadedDarkThemeIndex = 0;
+        bool loadedAutoStartCheck = true;
 
         bool needResetTraffic = true;
 
@@ -45,34 +47,39 @@ namespace FloatingWindows
 
         bool sameProgramRunning = false;
 
+        // variables for recording the position
+        double xPos;
+        double yPos;
+        bool canRecordPos = true;
+
         public MainWindow()
         {
             // set the floating window always on top
             this.Topmost = true;
 
-            executableConfigName = commonSet.configurationName;
+            executableConfigName = commonSet.configurationExecutableName;
             configFileName = commonSet.configFileName;
 
             InitializeComponent();
 
             // check if the background process is running, if no, show message and end the program
             if (!commonSet.CheckIfRunning(commonSet.baseProgramProcessName))
-            {
-                MessageBox.Show("Please run \"StartProcess.exe\" and use it to access the Floating Window");
+            {            
+                MessageBox.Show("Please run \"StartProcess.exe\" and use it to access the Floating Window.");
                 this.Close();
             }
 
             // check if any same programm is running
             if (commonSet.CheckIfRunningSameProcess(commonSet.floatingWindowProcessName))
             {
-                MessageBox.Show("Floating Window is opened already");
+                MessageBox.Show("Floating Window is opened already.");
                 this.Close();
             }
 
             // check if the program name is changed
             if (commonSet.CheckIfNameChanged(commonSet.floatingWindowProcessName))
             {
-                MessageBox.Show("Executable file name changed or corrupted\nPlease download the program again");
+                MessageBox.Show("Executable file name changed or corrupted.\nPlease download the program again.");
                 this.Close();
             }
 
@@ -88,11 +95,20 @@ namespace FloatingWindows
             // load setting
             LoadSetting();
 
+            // apply auto start setting
+            commonSet.ApplyAutoStartSetting(loadedAutoStartCheck);
+
             // resize window
             ResizeWindow();
 
             // Get Traffic information
             GetTrafficInformation();
+
+            // Load and set the position of floating window
+            LoadPosition();
+
+            // Save position of floating window
+            SavePosition();
 
             // check minized
             CheckMinimized();
@@ -158,6 +174,104 @@ namespace FloatingWindows
             });
         }
 
+        private void SavePosition()
+        {
+            double xPosTemp = -100000.0;
+            double yPosTemp = -100000.0;
+            Task.Factory.StartNew(() => {
+
+                // try to access the position file
+                try
+                {
+                    while (true)
+                    {
+                        this.Dispatcher.Invoke(() => {
+                            // record the position of this window
+                            xPos = Application.Current.MainWindow.Left;
+                            yPos = Application.Current.MainWindow.Top;
+
+                            // check if the position is changed or not
+                            if (xPos != xPosTemp && yPos != yPosTemp)
+                            {
+                                if (!commonSet.SaveFloatingWindowPosition(xPos, yPos))
+                                {
+                                    canRecordPos = false;
+                                }
+                            }
+
+                            xPosTemp = xPos;
+                            yPosTemp = yPos;
+
+                        });
+                        Thread.Sleep(500);
+                    }
+                }
+                catch
+                {
+                    canRecordPos = false;
+                }
+                if (!canRecordPos)
+                {
+                    if (loadedLanguageIndex == 1)
+                    {
+                        MessageBox.Show("無法儲存懸浮窗的坐標。\n請重新下載本程式。");
+                    }
+                    else if (loadedLanguageIndex == 2)
+                    {
+                        MessageBox.Show("フローティング・ウィンドウの位置は保存できない。\nもう一度プログラムをダウンロードしてください。");
+                    }
+                    else
+                    {                                             
+                        // if the position cannot be recorded, show error message and end the record loop
+                        MessageBox.Show("The position of the floating window cannot be saved.\nPlease download the program again.");                                               
+                    }                    
+                }
+            });
+        }
+
+        private void LoadPosition()
+        {
+            double xLoadedPos;
+            double yLoadedPos;
+            try
+            {
+                // try to load the position of floating window
+                using (System.IO.StreamReader file = new System.IO.StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + commonSet.floatingPositionFileName))
+                {
+                    if (!Double.TryParse(file.ReadLine(), out xLoadedPos))
+                    {
+                        // if the position cannot be converted to double, there is a format error, throw exception
+                        throw new Exception();
+                    }
+                    if (!Double.TryParse(file.ReadLine(), out yLoadedPos))
+                    {
+                        // if the position cannot be converted to double, there is a format error, throw exception
+                        throw new Exception();
+                    }
+
+                }
+                // set the position of floating window as loaded position
+                this.Left = xLoadedPos;
+                this.Top = yLoadedPos;
+            }
+            catch
+            {
+                if (loadedLanguageIndex == 1)
+                {
+                    MessageBox.Show("懸浮窗的坐標系統可能存在一些問題。\n請重新下載本程式。");
+                }
+                else if (loadedLanguageIndex == 2)
+                {
+                    MessageBox.Show("フローティング・ウィンドウの位置に問題がある可能性がある。\nもう一度プログラムをダウンロードしてください。");
+                }
+                else
+                {
+                    // tell the user that the position recording may not be working well
+                    MessageBox.Show("There may have some problem with the position of floating window.\nPlease download the program again.");
+                }                
+            }
+        }
+
         private void CheckMinimized()
         {
             Task.Factory.StartNew(() =>
@@ -166,14 +280,13 @@ namespace FloatingWindows
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-
                             // check if the floating window is minimized, if so, close the window
                             if (this.WindowState == WindowState.Minimized)
                             {
                                 this.Close();
                             }
                         });
-                        Thread.Sleep(100);
+                        Thread.Sleep(1000);
                     }
 
                 }
@@ -186,18 +299,39 @@ namespace FloatingWindows
             if (commonSet.LoadSetting())
             {
                 // if the read is success, assign the value to different variable
+                loadedLanguageIndex = commonSet.loadedLanguageIndex;
                 loadedInterfaceIndex = commonSet.loadedInterfaceIndex;
                 loadedUpdateFrequency = commonSet.loadedUpdateFrequency;
                 loadedSpeedUnitIndex = commonSet.loadedSpeedUnitIndex;
                 loadedSpeedUnit = commonSet.loadedSpeedUnit;
-                loadedAutoStartCheck = commonSet.loadedAutoStartCheck;
                 loadedDisplayMethodIndex = commonSet.loadedDisplayMethodIndex;
                 loadedDisplaySizeIndex = commonSet.loadedDisplaySizeIndex;
+                loadedDarkThemeIndex = commonSet.loadedDarkThemeIndex;
+                loadedAutoStartCheck = commonSet.loadedAutoStartCheck;
+
+                // set "loading" for different languages
+                if (commonSet.loadedLanguageIndex == 0)
+                {
+                    this.UploadTrafficTextBlock.Text = "Loading...";
+                    this.DownloadTrafficTextBlock.Text = "Loading...";
+                }
+                else if (commonSet.loadedLanguageIndex == 1)
+                {
+                    // for Chinese
+                    this.UploadTrafficTextBlock.Text = "加載中...";
+                    this.DownloadTrafficTextBlock.Text = "加載中...";
+                }
+                else if (commonSet.loadedLanguageIndex == 2)
+                {
+                    // *** please add Japanese version
+                    this.UploadTrafficTextBlock.Text = "ローディング...";
+                    this.DownloadTrafficTextBlock.Text = "ローディング...";
+                }
             }
             else
             {
                 // if the cannot read the configuration file successfully, show error message
-                MessageBox.Show("Cannot find the configuration file or the configuration file corrupted\nPlease try to apply default setting to correct it");
+                MessageBox.Show("Cannot find the configuration file or the configuration file corrupted.\nPlease try to apply default setting to correct it.");
             }
 
             #region Old Loading code

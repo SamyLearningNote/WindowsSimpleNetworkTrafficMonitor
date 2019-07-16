@@ -12,6 +12,7 @@ namespace SNTMStartProcess
 {
     public partial class About : Form
     {
+        CommonSet commonSet = new CommonSet();
         public About()
         {
             InitializeComponent();
@@ -19,17 +20,32 @@ namespace SNTMStartProcess
 
         private void About_Load(object sender, EventArgs e)
         {
+            commonSet.InitCommonSet();
+            commonSet.LoadSetting();
+            // Choose Language
+            if (commonSet.loadedLanguageIndex == 1)
+            {
+                // show Chinese
+                this.label1.Text = "版本：v1.1.0.0";
+                this.linkLabel1.Text = "檢查更新";
+            }
+            else if (commonSet.loadedLanguageIndex == 2)
+            {
+                // show Japanese
+                this.label1.Text = "バージョン：v1.1.0.0";
+                this.linkLabel1.Text = "更新を確認する";
 
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
-        {
+        {/*
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
             // Hide this window instead of close
-            this.Hide();
+            this.Hide();*/
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

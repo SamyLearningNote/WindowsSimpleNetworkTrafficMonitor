@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SNTMFloatingWindow</RootNamespace>
     <AssemblyName>SNTMFloatingWindow</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -118,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pin_dark_mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_dark_mode.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,9 +33,11 @@
             this.BGWorkNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.floatingWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showFloatingWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideFloatingWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetFloatingWindowPositionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +49,7 @@
             this.BGWorkNotifyIcon.Text = "Simple Network Traffic Monitor";
             this.BGWorkNotifyIcon.Visible = true;
             this.BGWorkNotifyIcon.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.BGWorkNotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BGWorkNotifyIcon_MouseClick);
             this.BGWorkNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // contextMenuStrip1
@@ -54,12 +57,11 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configurationToolStripMenuItem,
-            this.showFloatingWindowToolStripMenuItem,
-            this.hideFloatingWindowToolStripMenuItem,
             this.aboutToolStripMenuItem,
+            this.floatingWindowToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(240, 134);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(203, 108);
             this.contextMenuStrip1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuStrip1_MouseClick);
             this.contextMenuStrip1.MouseLeave += new System.EventHandler(this.contextMenuStrip1_MouseLeave);
             // 
@@ -67,15 +69,34 @@
             // 
             this.configurationToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.settings;
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.configurationToolStripMenuItem.Text = "Configurations";
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.information;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.aboutToolStripMenuItem.Text = "About ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // floatingWindowToolStripMenuItem
+            // 
+            this.floatingWindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showFloatingWindowToolStripMenuItem,
+            this.hideFloatingWindowToolStripMenuItem,
+            this.resetFloatingWindowPositionToolStripMenuItem});
+            this.floatingWindowToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.floatingwindow;
+            this.floatingWindowToolStripMenuItem.Name = "floatingWindowToolStripMenuItem";
+            this.floatingWindowToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.floatingWindowToolStripMenuItem.Text = "Floating Window";
             // 
             // showFloatingWindowToolStripMenuItem
             // 
             this.showFloatingWindowToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.eye;
             this.showFloatingWindowToolStripMenuItem.Name = "showFloatingWindowToolStripMenuItem";
-            this.showFloatingWindowToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.showFloatingWindowToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.showFloatingWindowToolStripMenuItem.Text = "Show floating window";
             this.showFloatingWindowToolStripMenuItem.Click += new System.EventHandler(this.showFloatingWindowToolStripMenuItem_Click);
             // 
@@ -83,23 +104,23 @@
             // 
             this.hideFloatingWindowToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.visibility;
             this.hideFloatingWindowToolStripMenuItem.Name = "hideFloatingWindowToolStripMenuItem";
-            this.hideFloatingWindowToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.hideFloatingWindowToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.hideFloatingWindowToolStripMenuItem.Text = "Hide floating window";
             this.hideFloatingWindowToolStripMenuItem.Click += new System.EventHandler(this.hideFloatingWindowToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // resetFloatingWindowPositionToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.information;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
-            this.aboutToolStripMenuItem.Text = "About ...";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.resetFloatingWindowPositionToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.target;
+            this.resetFloatingWindowPositionToolStripMenuItem.Name = "resetFloatingWindowPositionToolStripMenuItem";
+            this.resetFloatingWindowPositionToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.resetFloatingWindowPositionToolStripMenuItem.Text = "Reset position here";
+            this.resetFloatingWindowPositionToolStripMenuItem.Click += new System.EventHandler(this.resetFloatingWindowPositionToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::SNTMStartProcess.MenuResource.logout;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -123,10 +144,12 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem showFloatingWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hideFloatingWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem floatingWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showFloatingWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hideFloatingWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetFloatingWindowPositionToolStripMenuItem;
     }
 }
 
