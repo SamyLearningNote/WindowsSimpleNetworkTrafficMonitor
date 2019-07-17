@@ -12,6 +12,7 @@ namespace SNTMStartProcess
 {
     public partial class About : Form
     {
+        string version = "v1.2.0.0";
         CommonSet commonSet = new CommonSet();
         public About()
         {
@@ -23,16 +24,22 @@ namespace SNTMStartProcess
             commonSet.InitCommonSet();
             commonSet.LoadSetting();
             // Choose Language
-            if (commonSet.loadedLanguageIndex == 1)
+            if (commonSet.loadedLanguageIndex == 0)
+            {
+                // show English
+                this.label1.Text = "Version: " + version;
+                this.linkLabel1.Text = "Check for Updates";
+            }
+            else if (commonSet.loadedLanguageIndex == 1)
             {
                 // show Chinese
-                this.label1.Text = "版本：v1.1.0.0";
+                this.label1.Text = "版本：" + version;
                 this.linkLabel1.Text = "檢查更新";
             }
             else if (commonSet.loadedLanguageIndex == 2)
             {
                 // show Japanese
-                this.label1.Text = "バージョン：v1.1.0.0";
+                this.label1.Text = "バージョン：" + version;
                 this.linkLabel1.Text = "更新を確認する";
 
             }
