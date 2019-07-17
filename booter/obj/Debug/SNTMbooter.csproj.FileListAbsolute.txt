@@ -1,0 +1,9 @@
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\bin\Debug\SNTMBooter.exe.config
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\bin\Debug\SNTMBooter.exe
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\bin\Debug\SNTMBooter.pdb
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\booter.Booter.resources
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\SNTMbooter.csproj.GenerateResource.cache
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\SNTMbooter.csproj.CoreCompileInputs.cache
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\SNTMBooter.exe
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\SNTMBooter.pdb
+C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\booter\obj\Debug\SNTMBooter.Properties.Resources.resources
