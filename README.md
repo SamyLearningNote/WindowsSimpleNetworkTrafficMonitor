@@ -25,4 +25,4 @@ SAMY,
 Rene,
 Zachary
 
-If you have any comment or suggestion, you may send an email to samylearningnote@gmail.com
+If you have any comment or suggestion, please send an email to samylearningnote@gmail.com
