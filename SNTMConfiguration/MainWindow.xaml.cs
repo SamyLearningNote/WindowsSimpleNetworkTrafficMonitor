@@ -323,6 +323,7 @@ namespace WindowsNetworkMonitorWPF
                 this.WindowSizeSelectionBox.SelectedIndex = loadedDisplaySizeIndex;
                 this.DarkThemeSelectionBox.SelectedIndex = loadedDarkThemeIndex;
                 this.AutoRunCheckBox.IsChecked = loadedAutoStartCheck;
+                this.ShowBubbleCheckBox.IsChecked = commonSet.loadedShowBubbleCheck;
 
                 changeLanguages();
 
