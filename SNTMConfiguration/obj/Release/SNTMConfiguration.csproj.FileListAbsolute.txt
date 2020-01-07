@@ -1,15 +1,14 @@
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.exe.config
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.exe
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\bin\Release\SNTMConfiguration.pdb
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csprojAssemblyReference.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.g.cs
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\App.g.cs
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.lref
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.baml
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.g.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.Properties.Resources.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.GenerateResource.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.CoreCompileInputs.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.exe
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.pdb
+D:\bin\Release\SNTM\SNTMConfiguration.exe.config
+D:\bin\Release\SNTM\SNTMConfiguration.exe
+D:\bin\Release\SNTM\SNTMConfiguration.pdb
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csprojAssemblyReference.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.g.cs
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\App.g.cs
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.lref
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.baml
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.g.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.Properties.Resources.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.GenerateResource.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.exe
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.pdb

@@ -1,12 +1,11 @@
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.exe.config
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.exe
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\bin\Release\SNTMStartProcess.pdb
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csprojAssemblyReference.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.About.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\StartProcess.LoadingForm.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.Properties.Resources.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.MenuResource.resources
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csproj.GenerateResource.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csproj.CoreCompileInputs.cache
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.exe
-C:\Users\CH\Desktop\SummerProject\SNTM\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.pdb
+D:\bin\Release\SNTM\SNTMStartProcess.exe.config
+D:\bin\Release\SNTM\SNTMStartProcess.exe
+D:\bin\Release\SNTM\SNTMStartProcess.pdb
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csprojAssemblyReference.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.About.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\StartProcess.LoadingForm.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.Properties.Resources.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.MenuResource.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.csproj.GenerateResource.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.exe
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMStartProcess\obj\Release\SNTMStartProcess.pdb

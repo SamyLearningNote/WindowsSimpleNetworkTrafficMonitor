@@ -219,7 +219,7 @@ namespace WindowsNetworkMonitorWPF
 
                             // get data from common data
                             commonSet.GetTrafficInformation(this.SpeedUnitSelectionBox.SelectedIndex,
-                                this.NetworkInterfaceSelectionBox.SelectedIndex, updateFrequency);
+                                this.NetworkInterfaceSelectionBox.SelectedIndex);
 
 
 
@@ -808,6 +808,7 @@ namespace WindowsNetworkMonitorWPF
                 this.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 this.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 this.AutoRunCheckBox.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+                this.ShowBubbleCheckBox.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 this.DefaultButton.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 this.DefaultButton.Background = new SolidColorBrush(Color.FromArgb(255, 220, 220, 220));
                 this.ResetButton.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));

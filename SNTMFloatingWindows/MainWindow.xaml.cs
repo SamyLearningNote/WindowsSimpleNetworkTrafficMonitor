@@ -146,7 +146,7 @@ namespace FloatingWindows
 
                             // get data from common data
                             commonSet.GetTrafficInformation(loadedSpeedUnitIndex,
-                                loadedInterfaceIndex, loadedUpdateFrequency);
+                                loadedInterfaceIndex);
 
 
                             if (!needResetTraffic)
