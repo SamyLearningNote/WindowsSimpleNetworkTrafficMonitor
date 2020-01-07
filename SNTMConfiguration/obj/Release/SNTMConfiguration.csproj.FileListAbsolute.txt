@@ -1,0 +1,14 @@
+D:\bin\Release\SNTM\SNTMConfiguration.exe.config
+D:\bin\Release\SNTM\SNTMConfiguration.exe
+D:\bin\Release\SNTM\SNTMConfiguration.pdb
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csprojAssemblyReference.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.g.cs
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\App.g.cs
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration_MarkupCompile.lref
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\MainWindow.baml
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.g.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.Properties.Resources.resources
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.csproj.GenerateResource.cache
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.exe
+D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\SNTMConfiguration\obj\Release\SNTMConfiguration.pdb
