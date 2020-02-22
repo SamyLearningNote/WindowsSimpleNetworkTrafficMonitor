@@ -4,7 +4,7 @@ A lgihtweight and easy-to-use network monitor
 # How To Use
 1. Extract all the files and put them wherever you want(put all files in the same folder)
 2. Run SNTMStartProcess.exe
-3. Right click the icon in system tray to use it
+3. Right click the icon in system tray to apply your configuration
 4. Enjoy
 
 # Reminder
