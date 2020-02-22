@@ -1,4 +1,31 @@
-﻿using System;
+﻿/*
+ * MIT License
+ * 
+ * Copyright (c) 2020 SamyLearningNote
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * GitHub:
+ * https://github.com/SamyLearningNote
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +67,7 @@ namespace WindowsNetworkMonitorWPF
         bool needResetTraffic = true;
 
         int loadedLanguageIndex = 0;
+        string loadedInterfaceName = "";
         int loadedInterfaceIndex = 0;
         double loadedUpdateFrequency = 1;
         int loadedSpeedUnitIndex = 0;
@@ -252,7 +280,7 @@ namespace WindowsNetworkMonitorWPF
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + configFileName, false))
                 {
                     file.WriteLine(this.LanguageSelectionBox.SelectedIndex);
-                    file.WriteLine(this.NetworkInterfaceSelectionBox.SelectedIndex);
+                    file.WriteLine(this.NetworkInterfaceSelectionBox.Text);
                     file.WriteLine(String.Format("{0:F2}", updateFrequency));
                     file.WriteLine(this.SpeedUnitSelectionBox.SelectedIndex);
                     file.WriteLine(this.SpeedUnitSelectionBox.Text);
@@ -302,7 +330,16 @@ namespace WindowsNetworkMonitorWPF
             {
                 // if the read is success, assign the value to different variable
                 loadedLanguageIndex = commonSet.loadedLanguageIndex;
-                loadedInterfaceIndex = commonSet.loadedInterfaceIndex;
+                loadedInterfaceName = commonSet.loadedInterfaceName;
+                if (commonSet.GetInterfaceIndexWithName(loadedInterfaceName) != -1)
+                {
+                    loadedInterfaceIndex = commonSet.GetInterfaceIndexWithName(loadedInterfaceName);
+                }
+                else
+                {
+                    // set default index if the interfaced cannot be found
+                    loadedInterfaceIndex = 0;
+                }
                 loadedUpdateFrequency = commonSet.loadedUpdateFrequency;
                 loadedSpeedUnitIndex = commonSet.loadedSpeedUnitIndex;
                 loadedSpeedUnit = commonSet.loadedSpeedUnit;
@@ -440,6 +477,67 @@ namespace WindowsNetworkMonitorWPF
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
+            // check if the input is in range
+            double updateFrequencyTemp;
+            if (Double.TryParse(this.UpdateFrequencyLabel.Text, out updateFrequencyTemp))
+            {
+                if (updateFrequencyTemp < minFrequency)
+                {
+                    if (this.LanguageSelectionBox.SelectedIndex == 1)
+                    {
+                        MessageBox.Show(String.Format("刷新頻率不能少於 {0}。", minFrequency));
+                    }
+                    else if (this.LanguageSelectionBox.SelectedIndex == 2)
+                    {
+                        MessageBox.Show(String.Format("更新頻度は {0} より小さくすることはできない。", minFrequency));
+                    }
+                    else
+                    {
+                        MessageBox.Show(String.Format("Update frequency cannot be less than {0}.", minFrequency));
+                    }
+                    UpdateFrequencySlider.Value = minFrequency;
+                    UpdateFrequencyLabel.Text = minFrequency.ToString();
+                    return;
+                }
+                else if (updateFrequencyTemp > maxFrequency)
+                {
+                    if (this.LanguageSelectionBox.SelectedIndex == 1)
+                    {
+                        MessageBox.Show(String.Format("刷新頻率不能大於 {0}。", maxFrequency));
+                    }
+                    else if (this.LanguageSelectionBox.SelectedIndex == 2)
+                    {
+                        MessageBox.Show(String.Format("更新頻度は {0} より大きくすることはできない。", maxFrequency));
+                    }
+                    else
+                    {
+                        MessageBox.Show(String.Format("Update frequency cannot be larger than {0}.", maxFrequency));
+                    }
+                    UpdateFrequencySlider.Value = maxFrequency;
+                    UpdateFrequencyLabel.Text = maxFrequency.ToString();
+                    return;
+                }
+            }
+            else
+            {
+                // tell the user to input a number
+                if (this.LanguageSelectionBox.SelectedIndex == 1)
+                {
+                    MessageBox.Show("請輸入1個有效的數字。\n例如: 1.50。");
+                }
+                else if (this.LanguageSelectionBox.SelectedIndex == 2)
+                {
+                    MessageBox.Show("10進数を入力してください。\n例：1.50。");
+                }
+                else
+                {
+                    MessageBox.Show("Please input a decimal number. E.g. 1.50.");
+                }
+                this.UpdateFrequencyLabel.Text = "1";
+                return;
+            }
+
+
             // apply auto start setting
             commonSet.ApplyAutoStartSetting(autoStartChecked);
 
@@ -848,43 +946,9 @@ namespace WindowsNetworkMonitorWPF
             // check if the imput is a float number
             if (Double.TryParse(this.UpdateFrequencyLabel.Text, out updateFrequencyTemp))
             {
-                // check if the input is in range
-                if (updateFrequencyTemp < minFrequency)
-                {
-                    if (this.LanguageSelectionBox.SelectedIndex == 1)
-                    {
-                        MessageBox.Show(String.Format("刷新頻率不能少於 {0}。", minFrequency));
-                    }
-                    else if (this.LanguageSelectionBox.SelectedIndex == 2)
-                    {
-                        MessageBox.Show(String.Format("更新頻度は {0} より小さくすることはできない。", minFrequency));
-                    }
-                    else
-                    {
-                        MessageBox.Show(String.Format("Update frequency cannot be less than {0}.", minFrequency));
-                    }
-                }
-                else if (updateFrequencyTemp > maxFrequency)
-                {
-                    if (this.LanguageSelectionBox.SelectedIndex == 1)
-                    {
-                        MessageBox.Show(String.Format("刷新頻率不能大於 {0}。", maxFrequency));
-                    }
-                    else if (this.LanguageSelectionBox.SelectedIndex == 2)
-                    {
-                        MessageBox.Show(String.Format("更新頻度は {0} より大きくすることはできない。", maxFrequency));
-                    }
-                    else
-                    {
-                        MessageBox.Show(String.Format("Update frequency cannot be larger than {0}.", maxFrequency));
-                    }
-                }
-                else
-                {
-                    // the input is in range
-                    updateFrequency = updateFrequencyTemp;
-                    this.UpdateFrequencySlider.Value = updateFrequency;
-                }
+                // the input is in range
+                updateFrequency = updateFrequencyTemp;
+                this.UpdateFrequencySlider.Value = updateFrequency;
             }
             else
             {

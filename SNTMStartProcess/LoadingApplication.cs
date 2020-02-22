@@ -1,4 +1,30 @@
-﻿using SNTMStartProcess;
+﻿/*
+ * MIT License
+ * 
+ * Copyright (c) 2020 SamyLearningNote
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * GitHub:
+ * https://github.com/SamyLearningNote
+ */
+using SNTMStartProcess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +43,7 @@ namespace StartProcess
         CommonSet commonSet = new CommonSet();
 
         int loadedLanguageIndex = 0;
+        string loadedInterfaceName = "";
         int loadedInterfaceIndex = 0;
         double loadedUpdateFrequency = 1;
         int loadedSpeedUnitIndex = 0;
@@ -40,7 +67,16 @@ namespace StartProcess
             {
                 // if the read is success, assign the value to different variable
                 loadedLanguageIndex = commonSet.loadedLanguageIndex;
-                loadedInterfaceIndex = commonSet.loadedInterfaceIndex;
+                loadedInterfaceName = commonSet.loadedInterfaceName;
+                if (commonSet.GetInterfaceIndexWithName(loadedInterfaceName) != -1)
+                {
+                    loadedInterfaceIndex = commonSet.GetInterfaceIndexWithName(loadedInterfaceName);
+                }
+                else
+                {
+                    // set default index if the interfaced cannot be found
+                    loadedInterfaceIndex = 0;
+                }
                 loadedUpdateFrequency = commonSet.loadedUpdateFrequency;
                 loadedSpeedUnitIndex = commonSet.loadedSpeedUnitIndex;
                 loadedSpeedUnit = commonSet.loadedSpeedUnit;

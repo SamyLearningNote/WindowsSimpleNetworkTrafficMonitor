@@ -36,18 +36,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.Size = new System.Drawing.Size(80, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Version: 1.2.0.0";
+            this.label1.Text = "Version: 1.2.2.0";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(13, 40);
+            this.linkLabel1.Location = new System.Drawing.Point(10, 32);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(112, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(92, 12);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Check for Updates";
@@ -55,12 +57,13 @@
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 67);
+            this.ClientSize = new System.Drawing.Size(223, 54);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "About";
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);

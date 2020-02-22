@@ -1,9 +1,0 @@
-D:\bin\Release\SNTM\SNTMBooter.exe.config
-D:\bin\Release\SNTM\SNTMBooter.exe
-D:\bin\Release\SNTM\SNTMBooter.pdb
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\SNTMBooter.csprojAssemblyReference.cache
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\booter.Booter.resources
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\SNTMBooter.Properties.Resources.resources
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\SNTMBooter.csproj.GenerateResource.cache
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\SNTMBooter.exe
-D:\OneDrive - The Chinese University of Hong Kong\Summer Project\windows_simple_network_traffic_monitor\WindowsNetworkMonitorWPF\booter\obj\Release\SNTMBooter.pdb

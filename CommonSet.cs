@@ -1,4 +1,31 @@
-﻿using System;
+﻿/*
+ * MIT License
+ * 
+ * Copyright (c) 2020 SamyLearningNote
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * GitHub:
+ * https://github.com/SamyLearningNote
+ */
+ 
+ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +38,7 @@ using System.Diagnostics;
 // import the library for auto start
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 class CommonSet
 {
@@ -36,7 +64,7 @@ class CommonSet
     public string booterProgramProcessName = "SNTMBooter";
 
     public int loadedLanguageIndex = 0;
-    public int loadedInterfaceIndex = 0;
+    public string loadedInterfaceName = "";
     public double loadedUpdateFrequency = 1;
     public int loadedSpeedUnitIndex = 0;
     public string loadedSpeedUnit = "";
@@ -221,6 +249,21 @@ class CommonSet
 
     }
 
+    public int GetInterfaceIndexWithName(string interfaceName)
+    {
+        for (int i = 0; i < interfaces.Length; i++)
+        {
+            if (interfaces[i].Name.Equals(interfaceName))
+            {
+                return i;
+            }
+        }
+
+        // tell the user if the selected interface cannot be found
+        MessageBox.Show("Your selected interface cannot be found, please set it again");
+        return -1;
+    }
+
     public void GetTrafficInformation(int SpeedUnitSelectedIndex, int selectedInterfaceIndex)
     {
         /*Task.Factory.StartNew(() =>
@@ -290,19 +333,9 @@ class CommonSet
                     }
                 }
 
-                // read interface index
-                if (!Int32.TryParse(file.ReadLine(), out loadedInterfaceIndex))
-                {
-                    formatError = true;
-                }
-                else
-                {
-                    // check if the index is in range
-                    if (loadedInterfaceIndex < 0 || loadedInterfaceIndex >= interfaces.Length)
-                    {
-                        formatError = true;
-                    }
-                }
+                // read interface name
+                loadedInterfaceName = file.ReadLine();
+
 
                 // read update frequency
                 if (!Double.TryParse(file.ReadLine(), out loadedUpdateFrequency))
