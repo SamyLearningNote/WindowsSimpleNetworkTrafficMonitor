@@ -76,6 +76,7 @@ namespace WindowsNetworkMonitorWPF
         int loadedDisplaySizeIndex = 0;
         int loadedDarkThemeIndex = 0;
         bool loadedAutoStartCheck = true;
+        bool loadedShowBubbleCheck = true;
 
         bool configurationReaded = false;
         bool initCompleted = false;
@@ -347,6 +348,8 @@ namespace WindowsNetworkMonitorWPF
                 loadedDisplaySizeIndex = commonSet.loadedDisplaySizeIndex;
                 loadedDarkThemeIndex = commonSet.loadedDarkThemeIndex;
                 loadedAutoStartCheck = commonSet.loadedAutoStartCheck;
+                loadedShowBubbleCheck = commonSet.loadedShowBubbleCheck;
+
 
                 // set the readed status to true
                 configurationReaded = true;
@@ -360,7 +363,7 @@ namespace WindowsNetworkMonitorWPF
                 this.WindowSizeSelectionBox.SelectedIndex = loadedDisplaySizeIndex;
                 this.DarkThemeSelectionBox.SelectedIndex = loadedDarkThemeIndex;
                 this.AutoRunCheckBox.IsChecked = loadedAutoStartCheck;
-                this.ShowBubbleCheckBox.IsChecked = commonSet.loadedShowBubbleCheck;
+                this.ShowBubbleCheckBox.IsChecked = loadedShowBubbleCheck;
 
                 changeLanguages();
 
@@ -602,6 +605,7 @@ namespace WindowsNetworkMonitorWPF
                 this.DisplaySelectionBox.SelectedIndex = loadedDisplayMethodIndex;
                 this.WindowSizeSelectionBox.SelectedIndex = loadedDisplaySizeIndex;
                 this.AutoRunCheckBox.IsChecked = loadedAutoStartCheck;
+                this.ShowBubbleCheckBox.IsChecked = loadedShowBubbleCheck;
                 if (this.LanguageSelectionBox.SelectedIndex == 1)
                 {
                     MessageBox.Show("設定已重設。");
