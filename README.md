@@ -9,8 +9,8 @@ A lgihtweight and easy-to-use network monitor
 
 # Reminder
 1. For Windows only
-2. This project is developed base on .NET Framework 4.6.1. If your cannnot use this tool, please try to update your .NET Framework.
-3. Certain anti-virus programs are known to throw false positive-results. We are still investigating this issue and in the mean time, please rest assured that SNTM is completely safe.
+2. This project is developed base on .NET Framework 4.8. If your cannnot use this tool, please try to update your .NET Framework.
+3. Certain anti-virus programs are known to throw false positive-results. We are not putting any malicious code in the program and we still investigating this issue.
 4. For the sake of saving the configuration files, please do not put this software to the folder that need administrator permission.
 
 # Icons used

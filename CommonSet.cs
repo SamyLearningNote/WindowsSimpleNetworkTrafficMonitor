@@ -97,13 +97,11 @@ class CommonSet
 
     public bool CheckIfRunningSameProcess(String programName)
     {
-        Process[] processes = Process.GetProcessesByName(programName);
-        // check if there any program running with same name
-        if (processes.Length > 1)
-        {
-            return true;
-        }
-        return false;
+        // check if there any program running with same name under the current user
+        var currentSessionID = Process.GetCurrentProcess().SessionId;
+        Process[] processes = Process.GetProcessesByName(programName).Where(p => p.SessionId == currentSessionID).ToArray();
+
+        return processes.Length > 1;
     }
 
     public bool CheckIfNameChanged(String programName)
@@ -219,38 +217,54 @@ class CommonSet
     {
         // close all the related application
         // check if floating window is opened, if yes close all the floating window
+        var currentSessionID = Process.GetCurrentProcess().SessionId;
         Process[] processes = Process.GetProcessesByName(floatingWindowProcessName);
         foreach (var process in processes)
         {
-            process.Kill();
+            if(process.SessionId == currentSessionID)
+            {
+                process.Kill();
+            }
         }
 
         // check if configuration window is opened, if yes close all the floating window
         processes = Process.GetProcessesByName(configurationProcessName);
         foreach (var process in processes)
         {
-            process.Kill();
+            if (process.SessionId == currentSessionID)
+            {
+                process.Kill();
+            }
         }
 
         // close booter
         processes = Process.GetProcessesByName(booterProgramProcessName);
         foreach (var process in processes)
         {
-            process.Kill();
+            if (process.SessionId == currentSessionID)
+            {
+                process.Kill();
+            }
         }
 
         // close this application
         processes = Process.GetProcessesByName(baseProgramProcessName);
         foreach (var process in processes)
         {
-            process.Kill();
+            if (process.SessionId == currentSessionID)
+            {
+                process.Kill();
+            }
         }
-
-
     }
 
     public int GetInterfaceIndexWithName(string interfaceName)
     {
+        if(interfaceName == "全部" || interfaceName == "All")
+        {
+            return 0;
+        }
+
         for (int i = 0; i < interfaces.Length; i++)
         {
             if (interfaces[i].Name.Equals(interfaceName))
@@ -269,8 +283,25 @@ class CommonSet
         /*Task.Factory.StartNew(() =>
         {*/
         double divisionParameter = 1.0;
-        long uploadTrafficValueTemp = interfaces[selectedInterfaceIndex].GetIPv4Statistics().BytesSent;
-        long downloadTrafficValueTemp = interfaces[selectedInterfaceIndex].GetIPv4Statistics().BytesReceived;
+
+        long uploadTrafficValueTemp = 0;
+        long downloadTrafficValueTemp = 0;
+
+        if (selectedInterfaceIndex == 0)
+        {
+            // get the traffic value for all the network interface if the selected interface index is 0
+            foreach(NetworkInterface networkInterface in interfaces)
+            {
+                uploadTrafficValueTemp += networkInterface.GetIPv4Statistics().BytesSent;
+                downloadTrafficValueTemp += networkInterface.GetIPv4Statistics().BytesReceived;
+            }
+        }
+        else
+        {
+            uploadTrafficValueTemp = interfaces[selectedInterfaceIndex].GetIPv4Statistics().BytesSent;
+            downloadTrafficValueTemp = interfaces[selectedInterfaceIndex].GetIPv4Statistics().BytesReceived;
+        }
+
 
         // get the value corrseponding to the selected speed
         uploadTrafficValue = uploadTrafficValueTemp - previousUploadValue;

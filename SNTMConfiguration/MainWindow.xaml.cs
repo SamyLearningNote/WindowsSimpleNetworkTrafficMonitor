@@ -93,6 +93,7 @@ namespace WindowsNetworkMonitorWPF
         CommonSet commonSet = new CommonSet();
 
         // variables for record the selected index
+        int NetworkInterfaceIndexTemp;
         int DisplayIndexTemp;
         int SizeIndexTemp;
         int ThemeIndexTemp;
@@ -120,22 +121,6 @@ namespace WindowsNetworkMonitorWPF
                     MessageBox.Show("Please run \"StartProcess.exe\" and use it to access the Configuration Window.");
                 }*/
                 MessageBox.Show("Please run \"StartProcess.exe\" and use it to access the Configuration Window.");
-                this.Close();
-            }
-
-            // check if any same process running, if yes, close all of them
-            if (commonSet.CheckIfRunningSameProcess(commonSet.configurationProcessName))
-            {
-                // *** removed
-                /*if (this.LanguageSelectionBox.SelectedIndex == 1)
-                {
-                    MessageBox.Show("配置視窗已開啟。");
-                }
-                else
-                {
-                    MessageBox.Show("Configuration Window is opened already.");
-                }*/
-                MessageBox.Show("Configuration Window is opened already.");
                 this.Close();
             }
 
@@ -217,6 +202,20 @@ namespace WindowsNetworkMonitorWPF
             if (!NetworkInterface.GetIsNetworkAvailable())
             {
                 return;
+            }
+
+            // the first option is monitor all the network interface
+            if (this.LanguageSelectionBox.SelectedIndex == 1)
+            {
+                this.NetworkInterfaceSelectionBox.Items.Add("全部");
+            }
+            else if (this.LanguageSelectionBox.SelectedIndex == 2)
+            {
+                this.NetworkInterfaceSelectionBox.Items.Add("全部");
+            }
+            else
+            {
+                this.NetworkInterfaceSelectionBox.Items.Add("All");
             }
 
             // get the list of network interface
@@ -616,7 +615,7 @@ namespace WindowsNetworkMonitorWPF
                 }
                 else
                 {
-                    MessageBox.Show("Configuration is resetted to the status when the program is started.");
+                    MessageBox.Show("Configuration is resetted to the status when this window is opened.");
                 }
             }
             else
@@ -677,8 +676,8 @@ namespace WindowsNetworkMonitorWPF
             // reset the network interface
             this.NetworkInterfaceSelectionBox.SelectedIndex = 0;
 
-            // reset the update frequency to 1 second
-            this.UpdateFrequencySlider.Value = 1;
+            // reset the update frequency to 0.5 second
+            this.UpdateFrequencySlider.Value = 0.5;
 
             // reset the speed unit to MB/s
             this.SpeedUnitSelectionBox.SelectedIndex = 3;
@@ -719,6 +718,7 @@ namespace WindowsNetworkMonitorWPF
         public void changeLanguages()
         {
             // save the selected index
+            NetworkInterfaceIndexTemp = this.NetworkInterfaceSelectionBox.SelectedIndex;
             DisplayIndexTemp = this.DisplaySelectionBox.SelectedIndex;
             SizeIndexTemp = this.WindowSizeSelectionBox.SelectedIndex;
             ThemeIndexTemp = this.DarkThemeSelectionBox.SelectedIndex;
@@ -761,6 +761,8 @@ namespace WindowsNetworkMonitorWPF
                 this.DarkThemeSelectionBox.Items[1] = "開啟";
 
                 this.ShowBubbleCheckBox.Content = "顯示提示訊息";
+
+                this.NetworkInterfaceSelectionBox.Items[0] = "全部";
 
             }
             else if (this.LanguageSelectionBox.SelectedIndex == 2)
@@ -805,6 +807,7 @@ namespace WindowsNetworkMonitorWPF
                 // ****
                 this.ShowBubbleCheckBox.Content = "通知メッセージを表示する";
 
+                this.NetworkInterfaceSelectionBox.Items[0] = "全部";
             }
             else
             {
@@ -844,9 +847,12 @@ namespace WindowsNetworkMonitorWPF
                 this.DarkThemeSelectionBox.Items[1] = "On";
 
                 this.ShowBubbleCheckBox.Content = "Show bubble message";
+
+                this.NetworkInterfaceSelectionBox.Items[0] = "All";
             }
 
             // restore the selected index 
+            this.NetworkInterfaceSelectionBox.SelectedIndex = NetworkInterfaceIndexTemp;
             this.DisplaySelectionBox.SelectedIndex = DisplayIndexTemp;
             this.WindowSizeSelectionBox.SelectedIndex = SizeIndexTemp;
             this.DarkThemeSelectionBox.SelectedIndex = ThemeIndexTemp;
