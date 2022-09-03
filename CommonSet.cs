@@ -204,10 +204,14 @@ class CommonSet
     public void EndProcess(string targetedProcess)
     {
         // check if targeted process is opened, if yes close all the floating window
+        var currentSessionID = Process.GetCurrentProcess().SessionId;
         Process[] processes = Process.GetProcessesByName(targetedProcess);
         foreach (var process in processes)
         {
-            process.Kill();
+            if (process.SessionId == currentSessionID)
+            {
+                process.Kill();
+            }
         }
 
     }
@@ -216,46 +220,16 @@ class CommonSet
     public void EndAllProcess()
     {
         // close all the related application
-        // check if floating window is opened, if yes close all the floating window
-        var currentSessionID = Process.GetCurrentProcess().SessionId;
-        Process[] processes = Process.GetProcessesByName(floatingWindowProcessName);
-        foreach (var process in processes)
-        {
-            if(process.SessionId == currentSessionID)
-            {
-                process.Kill();
-            }
-        }
+        EndProcess(floatingWindowProcessName);
 
         // check if configuration window is opened, if yes close all the floating window
-        processes = Process.GetProcessesByName(configurationProcessName);
-        foreach (var process in processes)
-        {
-            if (process.SessionId == currentSessionID)
-            {
-                process.Kill();
-            }
-        }
+        EndProcess(configurationProcessName);
 
         // close booter
-        processes = Process.GetProcessesByName(booterProgramProcessName);
-        foreach (var process in processes)
-        {
-            if (process.SessionId == currentSessionID)
-            {
-                process.Kill();
-            }
-        }
+        EndProcess(booterProgramProcessName);
 
         // close this application
-        processes = Process.GetProcessesByName(baseProgramProcessName);
-        foreach (var process in processes)
-        {
-            if (process.SessionId == currentSessionID)
-            {
-                process.Kill();
-            }
-        }
+        EndProcess(baseProgramProcessName);
     }
 
     public int GetInterfaceIndexWithName(string interfaceName)
