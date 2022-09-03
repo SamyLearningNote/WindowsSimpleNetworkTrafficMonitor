@@ -39,7 +39,7 @@ namespace SNTMStartProcess
 {
     public partial class About : Form
     {
-        string version = "v1.2.3.0";
+        string version = "v1.3.0.0";
         CommonSet commonSet = new CommonSet();
         public About()
         {
