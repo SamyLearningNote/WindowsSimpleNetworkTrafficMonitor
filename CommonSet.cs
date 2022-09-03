@@ -278,10 +278,8 @@ class CommonSet
         return -1;
     }
 
-    public void GetTrafficInformation(int SpeedUnitSelectedIndex, int selectedInterfaceIndex)
+    private void GetTrafficInformationProcess(int speedUnitSelectedIndex, int selectedInterfaceIndex)
     {
-        /*Task.Factory.StartNew(() =>
-        {*/
         double divisionParameter = 1.0;
 
         long uploadTrafficValueTemp = 0;
@@ -308,7 +306,7 @@ class CommonSet
         downloadTrafficValue = downloadTrafficValueTemp - previousDownloadValue;
 
         // calculate the division parameter
-        for (int i = 0; i <= SpeedUnitSelectedIndex; i++)
+        for (int i = 0; i <= speedUnitSelectedIndex; i++)
         {
             if (i % 2 == 0)
             {
@@ -317,7 +315,7 @@ class CommonSet
         }
 
         // if the unit is for small "b", then * 8
-        if (SpeedUnitSelectedIndex % 2 == 0)
+        if (speedUnitSelectedIndex % 2 == 0)
         {
             divisionParameter /= 8;
         }
@@ -338,8 +336,20 @@ class CommonSet
         // update the current value as previous value
         previousUploadValue = uploadTrafficValueTemp;
         previousDownloadValue = downloadTrafficValueTemp;
-        //});
+    }
 
+    public void GetTrafficInformation(int speedUnitSelectedIndex, int selectedInterfaceIndex)
+    {
+        try
+        {
+            GetTrafficInformationProcess(speedUnitSelectedIndex, selectedInterfaceIndex);
+        }
+        catch (NetworkInformationException e)
+        {
+            // The network cannot be found, get the network interface again
+            GetInterfaceInformation();
+            GetTrafficInformationProcess(speedUnitSelectedIndex, selectedInterfaceIndex);
+        }
     }
 
 

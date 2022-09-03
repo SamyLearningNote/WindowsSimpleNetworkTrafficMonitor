@@ -62,11 +62,11 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="StartProcessForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="StartProcessForm.Designer.cs">
+      <DependentUpon>StartProcessForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingApplication.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="StartProcessForm.resx">
+      <DependentUpon>StartProcessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingApplication.resx">
       <DependentUpon>LoadingApplication.cs</DependentUpon>

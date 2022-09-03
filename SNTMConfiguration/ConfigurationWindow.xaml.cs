@@ -55,7 +55,7 @@ using System.Diagnostics;
 namespace WindowsNetworkMonitorWPF
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// ConfigurationWindow.xaml 的互動邏輯
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -383,98 +383,8 @@ namespace WindowsNetworkMonitorWPF
                 {
                     MessageBox.Show("Cannot find the configuration file or the configuration file is corrupted.\nPlease try to apply default setting to correct it.");
                 }
+                SetDefaultConfiguration();
             }
-
-            #region Old Loading code
-            /*
-            try
-            {
-                using (System.IO.StreamReader file = new System.IO.StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + configFileName))
-                {
-                    bool formatError = false;
-                    // read interface index
-                    if (!Int32.TryParse(file.ReadLine(), out loadedInterfaceIndex))
-                    {
-                        formatError = true;
-                    }
-                    else
-                    {
-                        // check if the index is in range
-                        if (loadedInterfaceIndex < 0 || loadedInterfaceIndex >= interfaces.Length)
-                        {
-                            formatError = true;
-                        }
-                    }
-
-                    // read update frequency
-                    if (!Double.TryParse(file.ReadLine(), out loadedUpdateFrequency))
-                    {
-                        formatError = true;
-                    }
-                    // check if the update frequency is in range
-                    else if (loadedUpdateFrequency < minFrequency || loadedUpdateFrequency > maxFrequency)
-                    {
-                        formatError = true;
-                    }
-
-                    // read speed unit index
-                    if (!Int32.TryParse(file.ReadLine(), out loadedSpeedUnitIndex))
-                    {
-                        formatError = true;
-                    }
-                    else if (loadedSpeedUnitIndex < 0 || loadedSpeedUnitIndex > numberOfSpeedUnit)
-                    {
-                        formatError = true;
-                    }
-
-                    // read speed unit
-                    loadedSpeedUnit = file.ReadLine();
-
-                    // read show method index
-                    if (!Int32.TryParse(file.ReadLine(), out loadedDisplayMethodIndex))
-                    {
-                        formatError = true;
-                    }
-                    else if (loadedDisplayMethodIndex < 0 || loadedDisplayMethodIndex > 3)
-                    {
-                        formatError = true;
-                    }
-
-                    // read floating window size index
-                    if (!Int32.TryParse(file.ReadLine(), out loadedDisplaySizeIndex))
-                    {
-                        formatError = true;
-                    }
-                    else if (loadedDisplaySizeIndex < 0 || loadedDisplaySizeIndex >= numberOfWindowSize)
-                    {
-                        formatError = true;
-                    }
-
-                    // read auto start option
-                    if (!Boolean.TryParse(file.ReadLine(), out loadedAutoStartCheck))
-                    {
-                        formatError = true;
-                    }
-
-                    // check if the format of file correct
-                    if (formatError)
-                    {
-                        // format of the file is wrong, show error message
-                        MessageBox.Show("Configuration file corrupted\nPlease try to apply default setting to correct it");
-                    }
-                    else
-                    {
-                        configurationReaded = true;
-                    }
-
-                }
-            }
-            catch
-            {
-                // error occur, show error message
-                MessageBox.Show("Cannot find the configuration file or the configuration file corrupted\nPlease try to apply default setting to correct it");
-            }*/
-            #endregion
         }
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
@@ -634,6 +544,7 @@ namespace WindowsNetworkMonitorWPF
                 {
                     MessageBox.Show("Configuration cannot be readed.\nPlease try to apply default configuration and restart the programme.");
                 }
+                SetDefaultConfiguration();
             }
         }
 
@@ -665,8 +576,7 @@ namespace WindowsNetworkMonitorWPF
 
             ResetTrafficInformation();
         }
-
-        private void DefaultButton_Click(object sender, RoutedEventArgs e)
+        private void SetDefaultConfiguration()
         {
             // reset the setting to default setting
 
@@ -713,6 +623,11 @@ namespace WindowsNetworkMonitorWPF
             }
 
             ResetTrafficInformation();
+        }
+
+        private void DefaultButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetDefaultConfiguration();
         }
 
         public void changeLanguages()

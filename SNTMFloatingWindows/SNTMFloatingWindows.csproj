@@ -63,7 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FloatingWindowResource.resx</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="FloatingWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -74,8 +74,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="FloatingWindow.xaml.cs">
+      <DependentUpon>FloatingWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

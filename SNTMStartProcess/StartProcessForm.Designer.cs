@@ -1,6 +1,6 @@
 ﻿namespace SNTMStartProcess
 {
-    partial class Form1
+    partial class StartProcessForm
     {
         /// <summary>
         /// Required designer variable.
